@@ -10,6 +10,7 @@ int main() {
 	cout << "HelloGLFW" << endl;
 
 
+
 	//Wait until the user hits enter at the console
 	cin.get();
 	//Program returns successfully
