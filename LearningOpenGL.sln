@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloGLFW", "HelloGLFW\HelloGLFW.vcxproj", "{05E07337-28F4-4375-AD32-F603B9CCF407}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "1_HelloGLFW", "1_HelloGLFW\1_HelloGLFW.vcxproj", "{05E07337-28F4-4375-AD32-F603B9CCF407}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +21,14 @@ Global
 		{05E07337-28F4-4375-AD32-F603B9CCF407}.Release|x64.Build.0 = Release|x64
 		{05E07337-28F4-4375-AD32-F603B9CCF407}.Release|x86.ActiveCfg = Release|Win32
 		{05E07337-28F4-4375-AD32-F603B9CCF407}.Release|x86.Build.0 = Release|Win32
+		{833C7B9B-5834-40C2-8DA8-8FC31F6E7E3A}.Debug|x64.ActiveCfg = Debug|x64
+		{833C7B9B-5834-40C2-8DA8-8FC31F6E7E3A}.Debug|x64.Build.0 = Debug|x64
+		{833C7B9B-5834-40C2-8DA8-8FC31F6E7E3A}.Debug|x86.ActiveCfg = Debug|Win32
+		{833C7B9B-5834-40C2-8DA8-8FC31F6E7E3A}.Debug|x86.Build.0 = Debug|Win32
+		{833C7B9B-5834-40C2-8DA8-8FC31F6E7E3A}.Release|x64.ActiveCfg = Release|x64
+		{833C7B9B-5834-40C2-8DA8-8FC31F6E7E3A}.Release|x64.Build.0 = Release|x64
+		{833C7B9B-5834-40C2-8DA8-8FC31F6E7E3A}.Release|x86.ActiveCfg = Release|Win32
+		{833C7B9B-5834-40C2-8DA8-8FC31F6E7E3A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
