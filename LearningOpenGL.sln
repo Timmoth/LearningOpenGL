@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2_HelloGLEW", "2_HelloGLEW\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3_HelloTriangle", "3_HelloTriangle\3_HelloTriangle.vcxproj", "{C481AB53-ECDE-4A68-A60E-E3718D6DB99D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "4_HelloShaders", "4_HelloShaders\4_HelloShaders.vcxproj", "{6CFE9F3A-9E03-4EE1-876B-8475A0B7CD89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{C481AB53-ECDE-4A68-A60E-E3718D6DB99D}.Release|x64.Build.0 = Release|x64
 		{C481AB53-ECDE-4A68-A60E-E3718D6DB99D}.Release|x86.ActiveCfg = Release|Win32
 		{C481AB53-ECDE-4A68-A60E-E3718D6DB99D}.Release|x86.Build.0 = Release|Win32
+		{6CFE9F3A-9E03-4EE1-876B-8475A0B7CD89}.Debug|x64.ActiveCfg = Debug|x64
+		{6CFE9F3A-9E03-4EE1-876B-8475A0B7CD89}.Debug|x64.Build.0 = Debug|x64
+		{6CFE9F3A-9E03-4EE1-876B-8475A0B7CD89}.Debug|x86.ActiveCfg = Debug|Win32
+		{6CFE9F3A-9E03-4EE1-876B-8475A0B7CD89}.Debug|x86.Build.0 = Debug|Win32
+		{6CFE9F3A-9E03-4EE1-876B-8475A0B7CD89}.Release|x64.ActiveCfg = Release|x64
+		{6CFE9F3A-9E03-4EE1-876B-8475A0B7CD89}.Release|x64.Build.0 = Release|x64
+		{6CFE9F3A-9E03-4EE1-876B-8475A0B7CD89}.Release|x86.ActiveCfg = Release|Win32
+		{6CFE9F3A-9E03-4EE1-876B-8475A0B7CD89}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
