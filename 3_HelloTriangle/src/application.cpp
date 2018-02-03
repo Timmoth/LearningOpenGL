@@ -41,14 +41,68 @@ Linker->Input
 */
 
 #include <iostream>
+#include <GL\glew.h>
+#include <GLFW\glfw3.h>
 
 using namespace std;
+
+int initGLFW();
+int initGLEW();
+void terminate();
+GLFWwindow* window;
 
 int main() {
 
 	cout << "Hello Triangles" << endl;
 
+	if (!initGLFW()) {
+		return -1;
+	}
 
-	cin.get();
+	if (!initGLEW()) {
+		terminate();
+		return -1;
+	}
+
+
+	terminate();
 	return 0;
+}
+
+int initGLFW() {
+	cout << "Initializing GLFW" << endl;
+	if (!glfwInit()) {
+		cout << "Failed to init GLFW" << endl;
+		return 0;
+	}
+
+	window = glfwCreateWindow(640, 480, "Hello Triangle", NULL, NULL);
+	if (!window) {
+		cout << "Failed to create GLFW context" << endl;
+		glfwTerminate();
+		return 0;
+	}
+
+	glfwMakeContextCurrent(window);
+
+	return 1;
+}
+
+int initGLEW() {
+
+	cout << "Initializing GLEW" << endl;
+
+	if (glewInit() != GLEW_OK) {
+		cout << "Glew init failed" << endl;
+		return 0;
+	}
+
+	cout << "Usign glew version: " << glewGetString(GLEW_VERSION) << endl;
+	return 1;
+}
+
+void terminate() {
+	cout << "Terminating press enter to exit" << endl;
+	cin.get();
+	glfwTerminate();
 }
