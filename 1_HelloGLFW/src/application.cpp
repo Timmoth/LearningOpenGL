@@ -7,18 +7,22 @@ This project demonstrates the initialization and basic usage of the library
 Introduction http://www.glfw.org/docs/latest/index.html
 Documentation http://www.glfw.org/documentation.html
 
-Visual studio Configuration properties:
+Bellow are the Visual studio Configuration properties needed to link GLFW and GLEW into our project
 All Configurations All Platforms:
+	*Set the output & intermediate directories to a path relative to the solution directory as to not clutter the project directories*
 	General
 		Output Directory						$(SolutionDir)bin\$(Platform)\$(Configuration)						
 		Intermediate Directory					$(SolutionDir)bin\intermediates\$(Platform)\$(Configuration)
 
+	*Include GLFW's header files*
 	C++->General
 		Additional Include Directories			$(SolutionDir)dependencies\GLFW\include;
 
+	*Tell the linker where GLFW's object files are located*
 	Linker->General
 		Additional Using Directories			$(SolutionDir)dependencies\GLFW\lib\$(Configuration)\$(PlatformTarget);
 
+	*Tell the linker which additional object files are being used*
 	Linker->Input
 		Additional Dependencies					opengl32.lib
 												glfw3.lib
