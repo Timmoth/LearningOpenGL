@@ -62,6 +62,8 @@ int main() {
 		return -1;
 	}
 
+	cin.get();
+
 	//Program returns successfully
 	return 0;
 }
@@ -82,7 +84,7 @@ int InitGLEW() {
 		cout << "glewInit failed" << glewGetErrorString(err) << endl;
 		return 0;
 	}
-	cout << "Usign glew version: " << glewGetString(GLEW_VERSION)) << endl;
+	cout << "Usign glew version: " << glewGetString(GLEW_VERSION) << endl;
 
 	return 1;
 }
