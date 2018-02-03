@@ -3,8 +3,25 @@ GLFW is a free open source multiplatform library for OpenGL which provides a pla
 API for creating Windows, Contexts, Surfaces and handling input and events.
 
 This project demonstrates the initialization and basic usage of the library 
+
 Introduction http://www.glfw.org/docs/latest/index.html
 Documentation http://www.glfw.org/documentation.html
+
+Visual studio Configuration properties:
+All Configurations All Platforms:
+	General
+		Output Directory						$(SolutionDir)bin\$(Platform)\$(Configuration)						
+		Intermediate Directory					$(SolutionDir)bin\intermediates\$(Platform)\$(Configuration)
+
+	C++->General
+		Additional Include Directories			$(SolutionDir)dependencies\GLFW\include;
+
+	Linker->General
+		Additional Using Directories			$(SolutionDir)dependencies\GLFW\lib\$(Configuration)\$(PlatformTarget);
+
+	Linker->Input
+		Additional Dependencies					opengl32.lib
+												glfw3.lib
 */
 
 

@@ -8,6 +8,8 @@ This application demonstrates how to setup GLEW with GLFW and some basic usage
 Introduction http://glew.sourceforge.net/index.html
 Basic usage http://glew.sourceforge.net/basic.html
 
+Configuration properties
+
 */
 
 #include <iostream>
