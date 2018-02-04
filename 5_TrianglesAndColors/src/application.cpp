@@ -16,14 +16,16 @@ unsigned int vertexElementObject;
 unsigned int shaderProgram;
 
 float vertexBufferData[] = {
-			//	  X		   Y		 Z			 R		  G		  B
-				0.0f,	 0.5f,		0.0f,		1.0f,	0.0f,	0.0f,
-				0.5f,	-0.5f,		0.0f,		0.0f,	1.0f,	0.0f,
-				-0.5f,	-0.5f,		0.0f,		0.0f,	0.0f,	1.0f
+	//X		 Y		Z	  R		G	 B
+	-0.5f,  0.5f, 0.0f, 1.0f, 0.0f, 0.0f, // Top-left
+	 0.5f,  0.5f, 0.0f, 0.0f, 1.0f, 0.0f, // Top-right
+	 0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f, // Bottom-right
+	-0.5f, -0.5f, 0.0f, 1.0f, 1.0f, 1.0f  // Bottom-left
 };
 
 unsigned int vertexElementData[] = {
-	0
+	0, 1, 2,
+	2, 3, 0
 };
 
 void RenderLoop();
@@ -36,16 +38,21 @@ int main() {
 	window = CreateGLFWwindow();
 	InitGLEW();
 
-	//Generate the vertex array object and make it the active vertex array
+	//Generate the vertex array object and make it the active array buffer
 	glGenVertexArrays(1, &vertexArrayObject);
 	glBindVertexArray(vertexArrayObject);
 
-	//Generate Vertex Buffer object and make it the active array buffer
+	//Generate Vertex Buffer object and make it the active vertex buffer
 	glGenBuffers(1, &vertexBufferObject);
 	glBindBuffer(GL_ARRAY_BUFFER, vertexBufferObject);
-
 	//Copy the vertex data to the buffer
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertexBufferData), vertexBufferData, GL_STATIC_DRAW);
+
+	//Generate vertex element buffer and make it the active element buffer
+	glGenBuffers(1, &vertexElementObject);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vertexElementObject);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(vertexElementData), vertexElementData, GL_STATIC_DRAW);
+
 
 	//Compile and link shaders into a program
 	ShaderProgramSource shaderSource = ParseShader("./5_TrianglesAndColors.shader");
@@ -81,7 +88,7 @@ void RenderLoop() {
 	do {
 
 
-		glDrawArrays(GL_TRIANGLES, 0, 3);
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 		// Swap buffers
 		glfwSwapBuffers(window);
