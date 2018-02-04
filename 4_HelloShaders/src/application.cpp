@@ -18,6 +18,14 @@ struct ShaderProgramSource {
 
 GLFWwindow* window;
 unsigned int shaderProgram;
+unsigned int vertexBufferObject;
+unsigned int vertexArrayObject;
+
+float vertexBufferData[]{
+	-1.0f, -1.0f, 0.0f,	//Vertex 0
+	1.0f, -1.0f, 0.0f,	//Vertex 1
+	0.0f,  1.0f, 0.0f	//Vertex 2
+};
 
 static ShaderProgramSource ParseShader(const string& filepath);
 static int createProgram(string vertexSource, string fragmentSource);
@@ -34,12 +42,37 @@ int main() {
 
 	InitGLEW();
 
-	ShaderProgramSource shaderSource = ParseShader("Basic.shader");
+	ShaderProgramSource shaderSource = ParseShader("./Basic.shader");
 	shaderProgram = createProgram(shaderSource.VertexSource, shaderSource.FragmentSource);
+
+	//Create and bind the vertex array object
+	glGenVertexArrays(1, &vertexArrayObject);
+	glBindVertexArray(vertexArrayObject);
+
+	glGenBuffers(1, &vertexBufferObject);
+	glBindBuffer(GL_ARRAY_BUFFER, vertexBufferObject);
+	glBufferData(
+		GL_ARRAY_BUFFER,
+		sizeof(vertexBufferData),
+		vertexBufferData,
+		GL_STATIC_DRAW);
+
+	glEnableVertexAttribArray(0);
+
+	glVertexAttribPointer(
+		0,
+		3,
+		GL_FLOAT,
+		GL_FALSE,
+		0,
+		(void*)0
+	);
+
+	glUseProgram(shaderProgram);
 
 	RenderLoop();
 
-	cin.get();
+	glfwTerminate();
 
 	return 0;
 }
@@ -50,6 +83,8 @@ void RenderLoop() {
 
 	//Render frames until the escape key is pressed
 	do {
+
+		glDrawArrays(GL_TRIANGLES, 0, 3);
 
 		// Swap buffers
 		glfwSwapBuffers(window);
