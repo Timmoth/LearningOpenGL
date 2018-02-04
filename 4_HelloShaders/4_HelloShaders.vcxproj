@@ -98,7 +98,8 @@
       <AdditionalDependencies>Common.lib;glew32d.lib;opengl32.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /y /d "$(SolutionDir)dependencies\GLEW\bin\$(Configuration)\$(PlatformTarget)\*.dll" "$(OutDir)"</Command>
+      <Command>xcopy /y /d "$(SolutionDir)dependencies\GLEW\bin\$(Configuration)\$(PlatformTarget)\*.dll" "$(OutDir)"
+xcopy /y /d "$(ProjectDir)src\Basic.shader" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -114,7 +115,8 @@
       <AdditionalDependencies>Common.lib;glew32d.lib;opengl32.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /y /d "$(SolutionDir)dependencies\GLEW\bin\$(Configuration)\$(PlatformTarget)\*.dll" "$(OutDir)"</Command>
+      <Command>xcopy /y /d "$(SolutionDir)dependencies\GLEW\bin\$(Configuration)\$(PlatformTarget)\*.dll" "$(OutDir)"
+xcopy /y /d "$(ProjectDir)src\Basic.shader" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -134,7 +136,8 @@
       <AdditionalDependencies>Common.lib;glew32.lib;opengl32.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /y /d "$(SolutionDir)dependencies\GLEW\bin\$(Configuration)\$(PlatformTarget)\*.dll" "$(OutDir)"</Command>
+      <Command>xcopy /y /d "$(SolutionDir)dependencies\GLEW\bin\$(Configuration)\$(PlatformTarget)\*.dll" "$(OutDir)"
+xcopy /y /d "$(ProjectDir)src\Basic.shader" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -154,11 +157,15 @@
       <AdditionalDependencies>Common.lib;glew32.lib;opengl32.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /y /d "$(SolutionDir)dependencies\GLEW\bin\$(Configuration)\$(PlatformTarget)\*.dll" "$(OutDir)"</Command>
+      <Command>xcopy /y /d "$(SolutionDir)dependencies\GLEW\bin\$(Configuration)\$(PlatformTarget)\*.dll" "$(OutDir)"
+xcopy /y /d "$(ProjectDir)src\Basic.shader" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\application.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\Basic.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
