@@ -1,7 +1,7 @@
 #include "../Headers/ShaderLoader.h"
 
 //Take the filepath of the shader sourcecode file and parse it into a ShaderProgramSource
-static ShaderProgramSource ParseShader(const string& filepath) {
+ShaderProgramSource ParseShader(const string& filepath) {
 	ifstream stream(filepath);
 
 	enum class ShaderType {
@@ -28,7 +28,7 @@ static ShaderProgramSource ParseShader(const string& filepath) {
 	return { ss[0].str(), ss[1].str() };
 }
 
-static int createProgram(string vertexSource, string fragmentSource) {
+int createProgram(string vertexSource, string fragmentSource) {
 	//Create a new program and get its ID
 	unsigned int program = glCreateProgram();
 	//Compile the VertexShader source and get the ID of the shader
@@ -51,7 +51,7 @@ static int createProgram(string vertexSource, string fragmentSource) {
 	return program;
 }
 
-static int compileShader(const string sourceCode, unsigned int type) {
+int compileShader(const string sourceCode, unsigned int type) {
 	//Create a shader object and get its ID
 	unsigned int id = glCreateShader(type);
 	//Convert the sourcecode String to a char array

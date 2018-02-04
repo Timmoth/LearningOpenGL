@@ -3,8 +3,8 @@
 #include <fstream>
 #include <sstream>
 
-#include <GLFW\glfw3.h>
 #include <GL\glew.h>
+#include <GLFW\glfw3.h>
 
 using namespace std;
 
@@ -14,6 +14,6 @@ struct ShaderProgramSource {
 	string FragmentSource;
 };
 
-static ShaderProgramSource ParseShader(const string& filepath);
-static int createProgram(string vertexSource, string fragmentSource);
-static int compileShader(const string sourceCode, unsigned int type);
+ShaderProgramSource ParseShader(const string& filepath);
+int createProgram(string vertexSource, string fragmentSource);
+int compileShader(const string sourceCode, unsigned int type);
