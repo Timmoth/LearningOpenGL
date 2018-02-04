@@ -16,9 +16,10 @@ unsigned int vertexElementObject;
 unsigned int shaderProgram;
 
 float vertexBufferData[] = {
-	0.0f, 0.5f,
-	0.5f, -0.5f,
-	-0.5f, -0.5f
+			//	  X		   Y		 Z			 R		  G		  B
+				0.0f,	 0.5f,		0.0f,		1.0f,	0.0f,	0.0f,
+				0.5f,	-0.5f,		0.0f,		0.0f,	1.0f,	0.0f,
+				-0.5f,	-0.5f,		0.0f,		0.0f,	0.0f,	1.0f
 };
 
 unsigned int vertexElementData[] = {
@@ -55,9 +56,16 @@ int main() {
 	//Get the index of the position attribute
 	unsigned int positionAttribute = glGetAttribLocation(shaderProgram, "position");
 	//Specify how the data for the position attribute is retrieved from the array
-	glVertexAttribPointer(positionAttribute, 2, GL_FLOAT, GL_FALSE, 0, 0);
+	glVertexAttribPointer(positionAttribute, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), 0);
 	//Enable the vertex attribute
 	glEnableVertexAttribArray(positionAttribute);
+
+	//Get the index of the color attribute
+	unsigned int colorAttribute = glGetAttribLocation(shaderProgram, "color");
+	//Specify how the data for the position attribute is retrieved from the array
+	glVertexAttribPointer(colorAttribute, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+	//Enable the vertex attribute
+	glEnableVertexAttribArray(colorAttribute);
 
 	RenderLoop();
 
@@ -71,6 +79,7 @@ void RenderLoop() {
 
 	//Render frames until the escape key is pressed
 	do {
+
 
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 

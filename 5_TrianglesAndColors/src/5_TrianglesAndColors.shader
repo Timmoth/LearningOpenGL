@@ -1,19 +1,24 @@
 #shader vertex
 #version 410 core
 
-layout(location = 0) in vec4 position;
+out vec3 Color;
+
+layout(location = 0) in vec3 position;
+layout(location = 1) in vec3 color;
 
 void main()
 {
-	gl_Position = position;
+	gl_Position = vec4(position, 1.0f);
+	Color = color;
 };
 
 #shader fragment
 #version 410 core
 
+layout(location = 0) in vec3 Color;
 layout(location = 0) out vec3 color;
 
 void main()
 {
-	color = vec3(0.2, 0.3, 0.4);
+	color = Color;
 };
