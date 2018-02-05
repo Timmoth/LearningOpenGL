@@ -7,12 +7,14 @@
 #include "GLEW_Common.h"
 #include "GLFW_Common.h"
 #include "ShaderLoader.h"
+#include "VertexBuffer.h"
+#include "IndexBuffer.h"
 
 using namespace std;
 
 GLFWwindow* window;
-unsigned int vertexBufferObject;
-unsigned int elementBufferObject;
+VertexBuffer vertexBufferObject;
+IndexBuffer indexBufferObject;
 unsigned int arrayBufferObject;
 unsigned int shaderProgram;
 
@@ -49,15 +51,8 @@ int main() {
 	glGenVertexArrays(1, &arrayBufferObject);
 	glBindVertexArray(arrayBufferObject);
 
-	glGenBuffers(1, &vertexBufferObject);
-	glBindBuffer(GL_ARRAY_BUFFER, vertexBufferObject);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertexBufferData), vertexBufferData, GL_STATIC_DRAW);
-
-	glGenBuffers(1, &elementBufferObject);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementBufferObject);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(elementBufferData), elementBufferData, GL_STATIC_DRAW);
-
-
+	vertexBufferObject = VertexBuffer(vertexBufferData, sizeof(vertexBufferData));
+	indexBufferObject = IndexBuffer(elementBufferData, 6);
 
 	//Generate texture buffer object and bind as active texture buffer
 	glGenTextures(1, &textureBufferObject);

@@ -136,12 +136,18 @@
   <ItemGroup>
     <ClCompile Include="src\GLEW_Common.cpp" />
     <ClCompile Include="src\GLFW_Common.cpp" />
+    <ClCompile Include="src\IndexBuffer.cpp" />
     <ClCompile Include="src\ShaderLoader.cpp" />
+    <ClCompile Include="src\VertexArray.cpp" />
+    <ClCompile Include="src\VertexBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\GLEW_Common.h" />
     <ClInclude Include="Headers\GLFW_Common.h" />
+    <ClInclude Include="Headers\IndexBuffer.h" />
     <ClInclude Include="Headers\ShaderLoader.h" />
+    <ClInclude Include="Headers\VertexArray.h" />
+    <ClInclude Include="Headers\VertexBuffer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
