@@ -2,6 +2,7 @@
 
 #include "GL\glew.h"
 #include "GLFW\glfw3.h"
+#include "SOIL.h"
 
 #include "GLEW_Common.h"
 #include "GLFW_Common.h"
@@ -41,7 +42,7 @@ int main() {
 	InitGLEW();
 
 	//Compile and link shaders into a program
-	ShaderProgramSource shaderSource = ParseShader("./6_Textures.shader");
+	ShaderProgramSource shaderSource = ParseShader("./res/6_Textures.shader");
 	shaderProgram = createProgram(shaderSource.VertexSource, shaderSource.FragmentSource);
 	glUseProgram(shaderProgram);
 
@@ -70,12 +71,12 @@ int main() {
 	//Generate mipmaps
 	glGenerateMipmap(GL_TEXTURE_2D);
 
-	float pixels[] = {
-		0.0f, 0.0f, 0.0f,   1.0f, 1.0f, 1.0f,
-		1.0f, 1.0f, 1.0f,   0.0f, 0.0f, 0.0f
-	};
-
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 2, 2, 0, GL_RGB, GL_FLOAT, pixels);
+	int width = 720;
+	int height = 960;
+	unsigned char* image =
+		SOIL_load_image("./res/dexter.png", &width, &height, 0, SOIL_LOAD_RGB);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB,
+		GL_UNSIGNED_BYTE, image);
 
 
 	//Get the index of the position attribute
