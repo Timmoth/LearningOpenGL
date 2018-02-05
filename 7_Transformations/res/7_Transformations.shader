@@ -1,16 +1,18 @@
 #shader vertex
 #version 410 core
 
-out vec3 Color;
-out vec2 Texcoord;
-
 layout(location = 0) in vec3 position;
 layout(location = 1) in vec3 color;
 layout(location = 2) in vec2 texcoord;
 
+out vec3 Color;
+out vec2 Texcoord;
+
+uniform mat4 transform;
+
 void main()
 {
-	gl_Position = vec4(position, 1.0f);
+	gl_Position = transform * vec4(position, 1.0f);
 	Color = color;
 	Texcoord = texcoord;
 };

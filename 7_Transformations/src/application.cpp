@@ -44,7 +44,7 @@ int main() {
 	InitGLEW();
 
 	//Compile and link shaders into a program
-	ShaderProgramSource shaderSource = ParseShader("./res/6_Textures.shader");
+	ShaderProgramSource shaderSource = ParseShader("./res/7_Transformations.shader");
 	shaderProgram = createProgram(shaderSource.VertexSource, shaderSource.FragmentSource);
 	glUseProgram(shaderProgram);
 
@@ -53,10 +53,6 @@ int main() {
 
 	vertexBufferObject = VertexBuffer(vertexBufferData, sizeof(vertexBufferData));
 	indexBufferObject = IndexBuffer(elementBufferData, 6);
-
-	glm::mat4 trans = glm::mat4(1.0f);
-	trans = glm::rotate(trans, glm::radians(90.0f), glm::vec3(0.0, 0.0, 1.0));
-	trans = glm::scale(trans, glm::vec3(0.5, 0.5, 0.5));
 
 	//Generate texture buffer object and bind as active texture buffer
 	glGenTextures(1, &textureBufferObject);
@@ -97,12 +93,17 @@ int main() {
 	glEnableVertexAttribArray(texAttrib);
 	glVertexAttribPointer(texAttrib, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
 
+
+
+
 	RenderLoop();
 
 	glfwTerminate();
 
 	return 0;
 }
+
+float rotation = 0.0f;
 
 void RenderLoop() {
 	//Set glfw to capture key's pressed
@@ -111,6 +112,13 @@ void RenderLoop() {
 	//Render frames until the escape key is pressed
 	do {
 
+		glClear(GL_COLOR_BUFFER_BIT);
+
+		glm::mat4 trans = glm::mat4(1.0f);
+		trans = glm::rotate(trans, glm::radians(rotation+= 0.1f), glm::vec3(0.0, 0.0, 1.0));
+
+		unsigned int transformLoc = glGetUniformLocation(shaderProgram, "transform");
+		glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
