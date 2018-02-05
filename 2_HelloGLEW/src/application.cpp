@@ -52,6 +52,7 @@ using namespace std;
 
 void CreateOpenGLRenderingContext();
 int InitGLEW();
+
 int main() {
 	cout << "Hello GLEW" << endl;
 
@@ -72,7 +73,7 @@ void CreateOpenGLRenderingContext() {
 	//Initilize OpenGL 
 	glfwInit();
 	//Create a glfw window handle
-	GLFWwindow* window = glfwCreateWindow(640, 480, "Hello GLFW!", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(640, 480, "Hello GLEW!", NULL, NULL);
 	//Make the window's context the current one for this thread
 	glfwMakeContextCurrent(window);
 }
