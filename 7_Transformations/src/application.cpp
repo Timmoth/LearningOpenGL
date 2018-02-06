@@ -104,6 +104,8 @@ int main() {
 }
 
 float rotation = 0.0f;
+float x, y = 0.0f;
+float dx = -0.01f, dy = 0.01f;
 
 void RenderLoop() {
 	//Set glfw to capture key's pressed
@@ -115,6 +117,9 @@ void RenderLoop() {
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		glm::mat4 trans = glm::mat4(1.0f);
+		if (x >= 1)dx = -0.01f; else if(x <= -1.0f) dx = 0.01f;
+		if (y >= 1)dy = -0.01f; else if (y <= -1.0f) dy = 0.01f;
+		trans = glm::translate(trans, glm::vec3(x += dx, y += dy, 0.0f));
 		trans = glm::rotate(trans, glm::radians(rotation+= 0.1f), glm::vec3(0.0, 0.0, 1.0));
 
 		unsigned int transformLoc = glGetUniformLocation(shaderProgram, "transform");

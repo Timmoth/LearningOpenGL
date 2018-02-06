@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "1_HelloGLFW", "1_HelloGLFW\1_HelloGLFW.vcxproj", "{05E07337-28F4-4375-AD32-F603B9CCF407}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "6_Textures", "6_Textures\6_Textures.vcxproj", "{811150BE-E310-4AFE-AEA3-B78CC36E9B5E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "7_Transformations", "7_Transformations\7_Transformations.vcxproj", "{55298CE9-AA6E-4DA6-A644-9EB1E91E041B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "8_DrawingLines", "8_DrawingLines\8_DrawingLines.vcxproj", "{EF254C50-C251-4732-8962-2C8076A3C78E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,6 +93,14 @@ Global
 		{55298CE9-AA6E-4DA6-A644-9EB1E91E041B}.Release|x64.Build.0 = Release|x64
 		{55298CE9-AA6E-4DA6-A644-9EB1E91E041B}.Release|x86.ActiveCfg = Release|Win32
 		{55298CE9-AA6E-4DA6-A644-9EB1E91E041B}.Release|x86.Build.0 = Release|Win32
+		{EF254C50-C251-4732-8962-2C8076A3C78E}.Debug|x64.ActiveCfg = Debug|x64
+		{EF254C50-C251-4732-8962-2C8076A3C78E}.Debug|x64.Build.0 = Debug|x64
+		{EF254C50-C251-4732-8962-2C8076A3C78E}.Debug|x86.ActiveCfg = Debug|Win32
+		{EF254C50-C251-4732-8962-2C8076A3C78E}.Debug|x86.Build.0 = Debug|Win32
+		{EF254C50-C251-4732-8962-2C8076A3C78E}.Release|x64.ActiveCfg = Release|x64
+		{EF254C50-C251-4732-8962-2C8076A3C78E}.Release|x64.Build.0 = Release|x64
+		{EF254C50-C251-4732-8962-2C8076A3C78E}.Release|x86.ActiveCfg = Release|Win32
+		{EF254C50-C251-4732-8962-2C8076A3C78E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
