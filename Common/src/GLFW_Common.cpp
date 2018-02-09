@@ -1,7 +1,5 @@
 #include "../Headers/GLFW_Common.h"
 
-using namespace std;
-
 int InitGLFW() {
 
 	cout << "Initializing GLFW library" << endl;
@@ -18,12 +16,12 @@ int InitGLFW() {
 	return 1;
 }
 
-GLFWwindow* CreateGLFWwindow() {
+GLFWwindow* CreateGLFWwindow(string title, int width, int height) {
 
 	cout << "Creating the OpenGL Context" << endl;
 
 	//Attempt to create a handle to a OpenGL context
-	GLFWwindow* window = glfwCreateWindow(640, 480, "Hello GLFW!", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(width, height, title.c_str(), NULL, NULL);
 
 	if (!window) {
 		cout << "Could not create OpenGL Window" << endl;
@@ -34,6 +32,7 @@ GLFWwindow* CreateGLFWwindow() {
 
 	//Make the window's context the current one for this thread
 	glfwMakeContextCurrent(window);
+	glViewport(0, 0, width, height);
 
 	return window;
 }
