@@ -163,9 +163,15 @@ xcopy /y /d "$(ProjectDir)res\*" "$(OutDir)res\"</Command>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\application.cpp" />
+    <ClCompile Include="src\Line.cpp" />
+    <ClCompile Include="src\Rectangle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\8_DrawingLines.shader" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="headers\Line.h" />
+    <ClInclude Include="headers\Rectangle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
