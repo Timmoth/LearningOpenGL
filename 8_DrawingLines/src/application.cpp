@@ -72,11 +72,14 @@ void RenderLoop() {
 
 	//Render frames until the escape key is pressed
 	do {
+
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		for (std::vector<Rectangle>::iterator it = Rectangles.begin(); it != Rectangles.end(); it++)
 		{
+			
 			(*it).Render();
+		
 		}
 
 

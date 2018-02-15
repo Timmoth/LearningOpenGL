@@ -40,7 +40,7 @@ int main() {
 
 	cout << "Textures" << endl;
 	InitGLFW();
-	window = CreateGLFWwindow();
+	window = CreateGLFWwindow("Textures", 640, 480);
 	InitGLEW();
 
 	//Compile and link shaders into a program
