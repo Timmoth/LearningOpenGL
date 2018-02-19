@@ -97,6 +97,10 @@
       <AdditionalLibraryDirectories>$(SolutionDir)dependencies\GLFW\lib\$(Configuration)\$(PlatformTarget);$(SolutionDir)dependencies\GLEW\lib\$(Configuration)\$(PlatformTarget);$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glew32d.lib;opengl32.lib;glfw3.lib;Common.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /d "$(SolutionDir)dependencies\GLEW\bin\$(PlatformTarget)\*.dll" "$(OutDir)"
+xcopy /y /d "$(ProjectDir)res\*" "$(OutDir)res\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -110,6 +114,10 @@
       <AdditionalLibraryDirectories>$(SolutionDir)dependencies\GLFW\lib\$(Configuration)\$(PlatformTarget);$(SolutionDir)dependencies\GLEW\lib\$(Configuration)\$(PlatformTarget);$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glew32d.lib;opengl32.lib;glfw3.lib;Common.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /d "$(SolutionDir)dependencies\GLEW\bin\$(PlatformTarget)\*.dll" "$(OutDir)"
+xcopy /y /d "$(ProjectDir)res\*" "$(OutDir)res\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -127,6 +135,10 @@
       <AdditionalLibraryDirectories>$(SolutionDir)dependencies\GLFW\lib\$(Configuration)\$(PlatformTarget);$(SolutionDir)dependencies\GLEW\lib\$(Configuration)\$(PlatformTarget);$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glew32.lib;opengl32.lib;glfw3.lib;Common.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /d "$(SolutionDir)dependencies\GLEW\bin\$(PlatformTarget)\*.dll" "$(OutDir)"
+xcopy /y /d "$(ProjectDir)res\*" "$(OutDir)res\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -144,9 +156,16 @@
       <AdditionalLibraryDirectories>$(SolutionDir)dependencies\GLFW\lib\$(Configuration)\$(PlatformTarget);$(SolutionDir)dependencies\GLEW\lib\$(Configuration)\$(PlatformTarget);$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glew32.lib;opengl32.lib;glfw3.lib;Common.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /d "$(SolutionDir)dependencies\GLEW\bin\$(PlatformTarget)\*.dll" "$(OutDir)"
+xcopy /y /d "$(ProjectDir)res\*" "$(OutDir)res\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\application.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\9_MultipleTextures.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
